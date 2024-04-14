@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+      body{
+        position: relative;
+        top: 50px;
+        background-color: purple;
+        font-family: Arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .header-wrapper{
+        background-color: white;
+        color: purple;
+        height: 50px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        z-index: 1;
+      }
+      .back-colorr{
+        background-color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: all 0.3s ease;
+      }
+      .back-colorr p{
+        cursor: pointer;
+        font-weight: bold;
+        margin: 20px;
+      }
+      .myself {
+        width: 40px;
+        border-radius: 20px;
+      }
+      .info-wrapper{
+        width: 80%;
+        max-width: 550px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .info {
+        width: 80%;
+        margin: 20px;
+        margin-left: 45px;
+      }
+      .back-button{
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 4px 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .backk-button{
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 4px 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 20px;
+        font-weight: bold;
+      }
+      .back-button:hover {
+        transform: scale(0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="back-colorr">
+          <button class="backk-button">Web info</button>
+      </div>
+    </div>
+    
+    <div class="info-wrapper">
+      <div>
+        <p class="info">The website was created on the 1st of March 2024.</p>
+      </div>
+      <div>
+        <button class="back-button" id="firstButton">1</button>
+        <button class="back-button" id="secondButton">2</button>
+      </div>
+    </div>
+    <script>
+      const firstBtn = document.querySelector('#firstButton');
+      const secondBtn = document.querySelector('#secondButton');
+      const infoText = document.querySelector('.info');
+
+      firstBtn.addEventListener('click', () => {
+        infoText.textContent = `The website was created on the 1st of March 2024.`;
+      });
+      secondBtn.addEventListener('click', () => {
+        infoText.textContent = `Inorder to contact the developer of the website, you can reach them by email at "mmphoza563@gmail.com".`;
+      });
+    </script>
+  </body>
+</html>

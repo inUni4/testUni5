@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+      body{
+        font-family: Arial;
+        margin: 0;
+        padding: 0;
+        background-color: purple;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .inUni-wrapper{
+        background-color: white;
+        max-width: 500px;
+        width: 45%;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 0px;
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .inUni-wrapper h1{
+        width: 90%;
+        text-align: center;
+        font-size: 22px;
+      }
+      .inUni-wrapper p{
+        width: 90%;
+        text-align: center;
+        font-size: 12px;
+      }
+      .inUni-wrapperr h1{
+        width: 90%;
+        text-align: center;
+        font-size: 22px;
+      }
+      .inUni-wrapperr p{
+        width: 90%;
+        text-align: center;
+        font-size: 12px;
+      }
+      .inUni-wrapperr{
+        background-color: white;
+        max-width: 500px;
+        width: 45%;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 0px;
+        position: absolute;
+        margin-left: 20px;
+        top: 30%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      button{
+        background-color: purple;
+        color: white;
+        font-size: 10px;
+        padding: 6px 12px;
+        border: none;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      button:hover{
+        transform: scale(0.9);
+      }
+      p{
+        width: 400px;
+        text-align: center;
+        font-size: 10px;
+      }
+      .hide{
+        opacity: 0;
+        pointer-events: none;
+      }
+      .show{
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .header-wrapper{
+        width: 100%;
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 17% 17% 17% 17% 17% 17%;
+
+      }
+      .about-wrapper{
+        z-index: 1;
+        display: inline-block;
+      }
+      .about-button{
+        width: 100%;
+      }
+    </style>
+    <body>
+      <div class="header-wrapper">
+        <div class="about-wrapper">
+          <a href="https://inuni4.github.io/testUni5/uni-about.html" ><button class="about-button">About</button></a>
+        </div>
+        <div class="about-wrapper">
+          <a href="https://inuni4.github.io/testUni5/uni-contact.html"><button class="contact-button">Contact</button></a>
+        </div>
+        <div class="about-wrapper">
+          <a href="https://inuni4.github.io/testUni5/webinfo-uni.html"><button class="creator-button">Website info</button></a>
+        </div>
+        <div class="about-wrapper">
+          <a href="https://inuni4.github.io/testUni5/course-calculator.html"><button class="course-button">Course Calculator</button></a>
+        </div>
+        <div class="about-wrapper">
+          <a href="https://inuni4.github.io/testUni5/open-uni.html"><button class="uni-button">Open Unies</button></a>
+        </div>
+        <div class="about-wrapper">
+          <a href="https://inuni4.github.io/testUni6/final-registration.html"><button class="register-button">Register</button></a>
+        </div>
+        
+      </div>
+      <div class="inUni-wrapper">
+        <h1>Welcome to inUni</h1>
+        <p>Where your future is guaranteed!</p>
+        <p id="inUni-content">Are you here for a university application?</p>
+        <p id="steps-Content"></p>
+        <p id="steps-Content1"></p>
+        <div>
+          <button id="varsity-button">Yes</button>
+        </div>
+      </div>
+      <div class="inUni-wrapperr">
+        <p id="steps-Content2"></p>
+        <p id="steps-Content3"></p>
+        <p id="steps-Content4"></p>
+        <p id="steps-Content5"></p>
+        <div>
+          <button id="back-button">Back</button>
+          <button id="next-button">Next</button>
+        </div>
+        <div>
+          <button id="back-button1">Back</button>
+          <button id="next-button1">Next</button>
+        </div>
+        <div>
+          <button id="back-button2">Back</button>
+          <button id="done-button">Done</button>
+        </div>
+      </div>
+      <script>
+        const inUniWrapper = document.querySelector('.inUni-wrapper');
+        const inUniWrapperr = document.querySelector('.inUni-wrapperr');
+        const varsityBtn = document.querySelector('#varsity-button');
+        const collegeBtn = document.querySelector('#college-button');
+        const backBtn = document.querySelector('#back-button');
+        const backBtn1 = document.querySelector('#back-button1');
+        const backBtn2 = document.querySelector('#back-button2');
+        const nextBtn = document.querySelector('#next-button');
+        const nextBtn1 = document.querySelector('#next-button1');
+        const doneBtn = document.querySelector('#done-button');
+        const inUniContent = document.querySelector('#inUni-content');
+        const stepsContent = document.querySelector('#steps-Content');
+        const stepsContent1 = document.querySelector('#steps-Content1');
+        const stepsContent2 = document.querySelector('#steps-Content2');
+        const stepsContent3 = document.querySelector('#steps-Content3');
+        const stepsContent4 = document.querySelector('#steps-Content4');
+        const stepsContent5 = document.querySelector('#steps-Content5');
+
+        varsityBtn.addEventListener('click', () => {
+          inUniWrapperr.classList.remove('hide');
+          varsityBtn.classList.add('hide');
+          nextBtn.classList.remove('hide');
+          nextBtn1.classList.add('hide');
+          backBtn.classList.remove('hide');
+          inUniContent.textContent = `Please note that this is only a Demo version or a Free trial but to access the premium version you have to register.`;
+          stepsContent.textContent = `In the premium version you can check which courses you qualify for all over the country.`;
+         stepsContent.textContent = `In the premium version you can check which courses you qualify for all over the country.`;
+         stepsContent1.textContent = `You can also check which universities are open all over South Africa.`;
+         stepsContent2.textContent = `If you're matriculating then please send your latest term's results, e.g Term 2 report card.`;
+         stepsContent3.textContent = `If you have matriculated then please send a certified copy of your statement or matric certificate`;
+         stepsContent4.textContent = `If you are upgrading your results then please send a certified copy of your statement or matric certificate and a proof of your upgrading, if you do not have a proof of your upgrading then go to the reception of your school and ask for it.`;
+         stepsContent5.textContent = ``;
+        });
+        backBtn.addEventListener('click', () => {
+          inUniWrapperr.classList.add('hide');
+          nextBtn.classList.add('hide');
+          backBtn.classList.add('hide');
+          varsityBtn.classList.remove('hide');
+          inUniContent.textContent = `Are you here for a university application?`;
+          stepsContent.textContent = '';
+          stepsContent1.textContent = '';
+        });
+        nextBtn.addEventListener('click', () => {
+          doneBtn.classList.remove('hide');
+          nextBtn.classList.add('hide');
+          backBtn1.classList.add('hide');
+          backBtn.classList.add('hide');
+          backBtn2.classList.remove('hide');
+          inUniContent.textContent = `When registering a fee of R60 will be required.`;
+          stepsContent.textContent = `The fee is just so that we can cover the costs of data and all the time spent on your application`;
+          stepsContent1.textContent = `If you do not receive any communication from any university within 7 days you will be fully refunded in 4 working days.`;
+          stepsContent2.textContent = `Please note that we are not liable for any university application fees.`;
+          stepsContent3.textContent = `And if you don't have any money to pay the university application fees you can enter our referral programme.`;
+          stepsContent4.textContent = ``;
+          stepsContent5.textContent = ``;
+        });
+        doneBtn.addEventListener('click', () => {
+          inUniWrapperr.classList.add('hide');
+          nextBtn.classList.add('hide');
+          backBtn.classList.add('hide');
+          nextBtn1.classList.add('hide');
+          backBtn1.classList.add('hide');
+          doneBtn.classList.add('hide');
+          backBtn2.classList.add('hide');
+          varsityBtn.classList.remove('hide');
+          inUniContent.textContent = `Are you here for a university application?`;
+          stepsContent.textContent = '';
+          stepsContent1.textContent = '';
+        });
+        backBtn1.addEventListener('click', () => {
+          inUniWrapperr.classList.add('hide');
+          nextBtn.classList.add('hide');
+          backBtn.classList.add('hide');
+          nextBtn1.classList.add('hide');
+          backBtn1.classList.add('hide');
+          doneBtn.classList.add('hide');
+          backBtn2.classList.add('hide');
+          varsityBtn.classList.remove('hide');
+          collegeBtn.classList.remove('hide');
+          inUniContent.textContent = `Are you here for a university application?`;
+          stepsContent.textContent = '';
+          stepsContent1.textContent = '';
+        });
+        backBtn2.addEventListener('click', () => {
+          inUniWrapperr.classList.add('hide');
+          nextBtn.classList.add('hide');
+          backBtn.classList.add('hide');
+          nextBtn1.classList.add('hide');
+          backBtn1.classList.add('hide');
+          doneBtn.classList.add('hide');
+          backBtn2.classList.add('hide');
+          varsityBtn.classList.remove('hide');
+          inUniContent.textContent = `Are you here for a university application?`;
+          stepsContent.textContent = '';
+          stepsContent1.textContent = '';
+        });
+
+        window.onload = () => {
+          inUniWrapperr.classList.add('hide');
+          nextBtn.classList.add('hide');
+          nextBtn1.classList.add('hide');
+          backBtn.classList.add('hide');
+          backBtn1.classList.add('hide');
+          backBtn2.classList.add('hide');
+          doneBtn.classList.add('hide');
+        };
+      </script>
+    </body>
+  </head>
+</html>

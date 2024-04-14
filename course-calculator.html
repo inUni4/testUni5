@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+      body{
+        position: relative;
+        top: 50px;
+        background-color: purple;
+        font-family: Arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120vh;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+      }
+      .header-wrapper{
+        background-color: white;
+        color: purple;
+        height: 50px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        z-index: 1;
+      }
+      .back-colorr{
+        background-color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: all 0.3s ease;
+      }
+      .back-colorr p{
+        cursor: pointer;
+        font-weight: bold;
+        margin: 20px;
+      }
+      .myself {
+        width: 40px;
+        border-radius: 20px;
+      }
+      .info-wrapper{
+        width: 25%;
+        max-width: 550px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transition: all 0.3s ease;
+        margin: 2px;
+      }
+      #subject{
+        width: 100%;
+        
+      }
+      #subject1{
+        width: 100%;
+        
+      }
+      #subject2{
+        width: 100%;
+        
+      }
+      #subject3{
+        width: 100%;
+        
+      }
+      #subject4{
+        width: 100%;
+        
+      }
+      #aps-score{
+        width: 100%;
+      }
+      .info-wrapperr{
+        width: 80%;
+        max-width: 450px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 6px;
+        margin:  5px;
+        position: relative;
+        left: 0%;
+        bottom: 0%;
+        box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .info-wrapperr1{
+        width: 80%;
+        max-width: 450px;
+        padding: 20px;
+        margin-right: 20px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .info-wrapperrr{
+        width: 90%;
+        max-width: 550px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      .info {
+        width: 90%;
+      }
+      .back-button{
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 4px 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px;
+      }
+      .backk-button{
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 4px 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 20px;
+        font-weight: bold;
+      }
+      .back-button:hover {
+        transform: scale(0.9);
+      }
+      .Yeezus{
+        width: 95%;
+        align-items: center;
+      }
+      .hide{
+        opacity: 0;
+        pointer-events: none;
+      }
+      .show{
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .info-wrapper h1{
+        font-family: Arial;
+        font-size: 14px;
+      }
+      p{
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="back-colorr">
+          <button class="backk-button">TUT Course Calculator</button>
+      </div>
+    </div>
+    
+    <div class="info-wrapper">
+      <div>
+        <input type="text" placeholder="Mathematics%" id="subject">
+        <input type="text" placeholder="English%" id="subject1">
+        <input type="text" placeholder="Physical Science%" id="subject2">
+        <input type="text" placeholder="Life Science%" id="subject3">
+        <input type="text" placeholder="Agriculture%" id="subject4">
+        <input type="number" placeholder="APS score" id="aps-score">
+      </div>
+      <div>
+        <button class="back-button" id="calculateButton">Calculate</button>
+      </div>
+    </div>
+    <div class="info-wrapperr">
+      <div>
+        <p id="textInfo"></p>
+        <p id="textInfo1"></p>
+        <p id="textInfo2"></p>
+        <p id="textInfo3"></p>
+        <p id="textInfo4"></p>
+        <p id="textInfo5"></p>
+        <p id="textInfo6"></p>
+        <p id="textInfo7"></p>
+        <p id="textInfo8"></p>
+      </div>
+    </div>
+    <div class="info-wrapperr1">
+      <div>
+        <p id="textInfo9"></p>
+        <p id="textInfo10"></p>
+        <p id="textInfo11"></p>
+        <p id="textInfo12"></p>
+        <p id="textInfo13"></p>
+        <p id="textInfo14"></p>
+        <p id="textInfo15"></p>
+        <p id="textInfo16"></p>
+      </div>
+      <div>
+        <button class="back-button" id="nextButton">1</button>
+        <button class="back-button" id="nextButton1">2</button>
+        <button class="back-button" id="nextButton2">3</button>
+        <button class="back-button" id="nextButton3">4</button>
+        <button class="back-button" id="nextButton4">5</button>
+        <button class="back-button" id="nextButton5">6</button>
+        <button class="back-button" id="nextButton6">7</button>
+        <button class="back-button" id="nextButton7">8</button>
+      </div>
+    </div>
+    <script src="course-calculator-final.js">
+      
+    </script>
+  </body>
+</html>

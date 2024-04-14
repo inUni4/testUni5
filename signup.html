@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+
+      }
+      body{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #4070f4;
+
+      }
+      .container{
+        position: relative;
+        max-width: 370px;
+        width: 100%;
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        display: none;
+      }
+      .wrapper{
+        position: absolute;
+        top: 30%;
+        max-width: 340px;
+        width: 100%;
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        display: grid;
+        grid-template: column;
+        justify-content: space-around;
+        align-items: center;
+        display: show;
+      }
+      .container header{
+        font-size: 22px;
+        font-weight: 600;
+        color: #333;
+      }
+      .container form{
+        margin-top: 30px;
+      }
+      form .field{
+        margin-bottom: 20px;
+
+      }
+      form .input-field{
+        position: relative;
+        height: 35px;
+        width: 100%;
+      }
+      form .input-field1{
+        position: relative;
+        height: 140px;
+        width: 100%;
+      }
+      .input-field .input{
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        padding: 0 15px;
+        border: 1px solid #d1d1d1;
+      }
+      .input-field .show-hide{
+        position: absolute;
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #919191;
+        padding: 3px;
+        cursor: pointer;
+      }
+      .field .error{
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+        color: #d93025;
+        font-size: 13px;
+      }
+      .error .error-icon{
+        margin-right: 6px;
+        font-size: 15px;
+      }
+      input{
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        padding: 0 15px;
+        border: 1px solid #d1d1d1;
+      }
+      .create-password .error{
+        align-items: flex-start;
+      }
+      .create-password .error-icon{
+        margin-top: 4px;
+      }
+      .button{
+        margin: 25px 0 6px;
+      }
+      .button input{
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: #4070f4;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .button input:hover{
+        background-color: #0e4bf1;
+      }
+      .emptyColumn{
+        border: 1px solid red;
+      }
+      .hide{
+        opacity: 0;
+        pointer-events: none;
+      }
+      .show{
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .done-button{
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: #4070f4;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        padding: 0 15px;
+      }
+      .done-button:hover{
+        transform: scale(0.9);
+      }
+      .done-button-wrapper{
+        transition: all 0.3s ease;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        margin: 25px 0 6px;
+        height: 35px;
+      }
+      .done-wrapper{
+        position: relative;
+        max-width: 370px;
+        width: 100%;
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Signup</header>
+
+      <form action="#">
+        <div class="field">
+          <div class="input-field email-field">
+            <input type="text" placeholder="Name" class="nameInput"/>
+          </div>
+        </div>
+        <div class="field">
+          <div class="input-field email-field">
+            <input type="text" placeholder="Surname" class="nameInput1"/>
+          </div>
+        </div>
+        <div class="field">
+          <div class="input-field email-field">
+            <input type="text" placeholder="Gender" class="nameInput5"/>
+          </div>
+        </div>
+        <div class="field">
+          <div class="input-field email-field">
+            <input type="email" placeholder="Enter your email" class="nameInput4"/>
+          </div>
+        </div>
+        <div class="field create-password">
+          <div class="input-field ">
+            <input type="password" placeholder="Create Password" class="passwordInput"/>
+            <i class="bx bx-hide show-hide show-password" ></i>
+          </div>
+        </div>
+        <div class="field confirm-password">
+          <div class="input-field">
+            <input type="password" placeholder="Confirm Password" class="passwordInput1"/>
+            <i class="bx bx-hide show-hide show-password1" ></i>
+          </div>
+        </div>
+        <div class="field confirm-password">
+          <div class="input-field">
+            <input type="number" placeholder="Cellphone number" class="nameInput3"/>
+          </div>
+        </div>
+        <div class="field confirm-password">
+          <div class="input-field">
+            <input type="date" placeholder="Birth Date" class="nameInput2"/>
+          </div>
+          <span class="error cPassword error error-message">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Passwords don't match.</p>
+          </span>
+        <div class="input-field button save-button">
+          <input type="submit" value="Submit Now" />
+        </div>
+      </form>
+    </div>
+
+    <div class="wrapper">
+      <header>Referral Programme</header>
+
+      <form action="#">
+        <div class="field">
+          <div class="input-field1 email-field">
+            <p>If you want to join our referral Programme where you could receive R200 when 30 people create an account with your referral code or R1200 when 100 people create an account with your referral code, click the referral code button.</p>
+          </div>
+        </div>
+
+        <div class="done-button-wrapper">
+          <button class="done-button">Done</button>
+        </div>
+        <div class="done-button-wrapper">
+          <button class="done-button">Referral code</button>
+        </div>
+      </form>
+    </div>
+    <div class="done-wrapper"></div>
+    <script>
+      const saveBtn = document.querySelector('.save-button');
+      const nextBtn = document.querySelector('.next-button');
+      const nameInput = document.querySelector('.nameInput');
+      const nameInput1 = document.querySelector('.nameInput1');
+      const nameInput2 = document.querySelector('.nameInput2');
+      const nameInput3 = document.querySelector('.nameInput3');
+      const nameInput4 = document.querySelector('.nameInput4');
+      const nameInput5 = document.querySelector('.nameInput5');
+      const nameInput6 = document.querySelector('.nameInput6');
+      const nameInput7 = document.querySelector('.nameInput7');
+      const nameInput8 = document.querySelector('.nameInput8');
+      const passwordInput = document.querySelector('.passwordInput');
+      const passwordInput1 = document.querySelector('.passwordInput1');
+      const sexCheck = document.querySelector('.sex-check');
+      const errorText = document.querySelector('.error-text');
+      const saveText = document.querySelector('.save-text');
+      const activityCheck = document.querySelector('.activity-check');
+      const container = document.querySelector('.container');
+      const wrapper = document.querySelector('.wrapper');
+      const errorMessage = document.querySelector('.error-message');
+      const showPassword = document.querySelector('.show-password');
+      const showPassword1 = document.querySelector('.show-password1');
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      showPass();
+      showPass1();
+
+      saveBtn.addEventListener('click', () => {
+        showPass();
+        showPass1();
+          if(nameInput2.value === '') {
+          nameInput2.classList.add('emptyColumn');
+          errorText.textContent = 'Birth date column is empty!';
+          errorMessage.classList.remove('hide');
+        } else if(nameInput3.value === '') {
+          nameInput3.classList.add('emptyColumn');
+          errorText.textContent = 'Cellphone number column is empty!';
+          errorMessage.classList.remove('hide');
+        } else if(nameInput3.value.length < 10) {
+          nameInput3.classList.add('emptyColumn');
+          errorText.textContent = 'Please enter a valid cellphone number!';
+          errorMessage.classList.remove('hide');
+        } else if(nameInput4.value === '') {
+          nameInput4.classList.add('emptyColumn');
+          errorMessage.classList.remove('hide');
+          errorText.textContent = 'Email column is empty!';
+        } else if(passwordInput.value === '') {
+          passwordInput.classList.add('emptyColumn');
+          errorMessage.classList.remove('hide');
+          errorText.textContent = 'Password column is empty!';
+        } else if(passwordInput1.value === '') {
+          passwordInput1.classList.add('emptyColumn');
+          errorMessage.classList.remove('hide');
+          errorText.textContent = 'Password column is empty!';
+        } else if(passwordInput.value !== passwordInput1.value) {
+          passwordInput.classList.add('emptyColumn');
+          passwordInput1.classList.add('emptyColumn');
+          errorMessage.classList.remove('hide');
+          errorText.textContent = 'Your password does not match!';
+        } else if(passwordInput.value.length < 7) {
+          passwordInput.classList.add('emptyColumn');
+          errorMessage.classList.remove('hide');
+          errorText.textContent = 'Your password is too short!';
+        } else if(passwordInput.value.length > 40) {
+          passwordInput.classList.add('emptyColumn');
+          errorMessage.classList.remove('hide');
+          errorText.textContent = 'Your password is too long!';
+        } else if(!nameInput4.value.match(emailPattern)) {
+            nameInput4.classList.add('emptyColumn');
+            errorMessage.classList.remove('hide');
+            errorText.textContent = 'Please enter a valid email.';
+        } else {
+          nameInput2.classList.remove('emptyColumn');
+          nameInput3.classList.remove('emptyColumn');
+          nameInput4.classList.remove('emptyColumn');
+          passwordInput.classList.remove('emptyColumn');
+          passwordInput1.classList.remove('emptyColumn');
+          errorMessage.classList.add('hide');
+          container.classList.add('hide');
+          wrapper.classList.remove('hide');
+        }
+      });
+      function showPass() {
+        showPassword.addEventListener('click', () => {
+          if(passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+          } else if(passwordInput.type === 'text') {
+            passwordInput.type = 'password';
+          }
+        }
+      );
+      }
+      function showPass1() {
+        showPassword1.addEventListener('click', () => {
+          if(passwordInput1.type === 'password') {
+            passwordInput1.type = 'text';
+          } else if(passwordInput1.type === 'text') {
+            passwordInput1.type = 'password';
+          }
+        }
+      );
+      }
+
+      window.onload = () => {
+        errorMessage.classList.add('hide');
+        //wrapper.classList.add('hide');
+      };
+    </script>
+  </body>
+</html>
